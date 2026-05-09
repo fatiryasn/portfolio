@@ -29,7 +29,7 @@
   //cert data
   const certificationsData = [
     {
-      image: "./assets/certifications/1st.jpeg",
+      image: "./assets/certifications/1st.png",
       title: "1st place, IT Software Solutions for Business",
       date: "May 2025",
       description:
@@ -57,7 +57,7 @@
         "PT. Potensi Karya Mandiri — Cross-platform mobile development, performance, and modern workflows.",
     },
     {
-      image: "./assets/certifications/vibecode.jpeg",
+      image: "./assets/certifications/vibecode.png",
       title: "Vibecoding with Antigravity",
       date: "Mar 2026",
       description:
@@ -76,7 +76,7 @@
       .join("");
 
     return `
-        <div class="group relative">
+        <div class="group relative fade-up delay-[0.3s]">
           <div class="hidden md:flex absolute left-[53px] top-10 w-4 h-4 ${exp.markerColor} rotate-45 border-2 border-brand-brown z-10 group-hover:scale-125 transition-transform duration-300"></div>
           <div class="ml-0 md:ml-32 relative">
             <div class="absolute top-3 left-3 w-full h-full border-2 ${exp.shadowColor} opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
@@ -131,8 +131,8 @@
                 </div>
               </div>
             </div>
-            <div class="absolute bottom-0 right-0 bg-brand-white border-t-2 border-l-2 border-brand-brown px-5 py-3">
-              <h4 class="font-lexend text-base font-bold text-brand-black text-right">${cert.title}</h4>
+            <div class="absolute bottom-0 right-0 bg-brand-white border-t-2 rounded-tl-lg border-l-2 border-brand-brown px-5 py-3">
+              <h4 class="font-grotesk text-sm font-bold text-brand-black text-right">${cert.title}</h4>
             </div>
           </div>
         </div>

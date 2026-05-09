@@ -88,7 +88,7 @@
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
 
-  function createProjectCard(project) {
+  function createProjectCard(project, index) {
     const tagsHtml = project.tags
       .map(
         (tag) => `
@@ -140,32 +140,34 @@
       ? `<p class="font-manrope text-gray-600 mt-2 leading-relaxed">${project.description}</p>`
       : "";
 
+    const delayClass = `transition-all duration-700 delay-[${(index % 3) * 100}ms]`;
+
     return `
-        <div class="group">
-          <div class="relative mb-6">
-            <div class="absolute top-3 left-3 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-20 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
-            <div class="relative w-full aspect-video overflow-hidden border-2 border-brand-brown bg-brand-brown/5">
-              <img
-                src="${project.image}"
-                alt="${project.alt}"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              ${overlayButtons}
-            </div>
-          </div>
-          <div>
-            <div class="flex items-center gap-3 mb-2">
-              <div class="h-1 w-4 bg-brand-yellow rounded"></div>
-              <span class="font-manrope text-xs text-gray-500 uppercase tracking-wider">${project.category}</span>
-            </div>
-            <h3 class="font-lexend text-2xl font-bold text-brand-black group-hover:text-brand-brown transition-colors duration-200">
-              ${project.title}
-            </h3>
-            ${descriptionHtml}
-            <div class="flex flex-wrap gap-2 mt-4">${tagsHtml}</div>
-          </div>
+    <div class="group fade-up ${delayClass}">
+      <div class="relative mb-6">
+        <div class="absolute top-3 left-3 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-20 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+        <div class="relative w-full aspect-video overflow-hidden border-2 border-brand-brown bg-brand-brown/5">
+          <img
+            src="${project.image}"
+            alt="${project.alt}"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          ${overlayButtons}
         </div>
-      `;
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="h-1 w-4 bg-brand-yellow rounded"></div>
+          <span class="font-manrope text-xs text-gray-500 uppercase tracking-wider">${project.category}</span>
+        </div>
+        <h3 class="font-lexend text-2xl font-bold text-brand-black group-hover:text-brand-brown transition-colors duration-200">
+          ${project.title}
+        </h3>
+        ${descriptionHtml}
+        <div class="flex flex-wrap gap-2 mt-4">${tagsHtml}</div>
+      </div>
+    </div>
+  `;
   }
 
   function createPaginationDots() {
@@ -186,7 +188,7 @@
     const pageProjects = projectsData.slice(startIndex, endIndex);
 
     projectsGrid.innerHTML = pageProjects
-      .map((project) => createProjectCard(project))
+      .map((project, idx) => createProjectCard(project, idx))
       .join("");
 
     prevBtn.disabled = currentPage === 1;
