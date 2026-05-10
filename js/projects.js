@@ -79,25 +79,26 @@
     },
   ];
 
-  const projectsPerPage = 3;
-  const totalPages = Math.ceil(projectsData.length / projectsPerPage);
-  let currentPage = 1;
-
   const projectsGrid = document.getElementById("projects-grid");
-  const paginationDots = document.getElementById("pagination-dots");
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
+  const paginationContainer = document.getElementById("pagination-container");
+  const scrollContainer = document.getElementById("scroll-container");
+  let currentPage = 1;
+  let projectsPerPage = 3;
+  let totalPages = Math.ceil(projectsData.length / projectsPerPage);
+
+  function isMobileOrTablet() {
+    return window.innerWidth < 1024;
+  }
 
   function createProjectCard(project, index) {
     const tagsHtml = project.tags
       .map(
         (tag) => `
-        <span class="px-2 py-1 text-xs font-manrope bg-brand-brown/10 text-brand-brown border border-brand-brown/20">${tag}</span>
+        <span class="px-2 py-1 text-xs font-manrope bg-brand-brown/10 text-brand-brown border border-brand-brown/20 whitespace-nowrap">${tag}</span>
       `,
       )
       .join("");
 
-    // Build link buttons only if links exist
     const liveBtn = project.liveLink
       ? `
           <a
@@ -137,13 +138,15 @@
         : "";
 
     const descriptionHtml = project.description
-      ? `<p class="font-manrope text-gray-600 mt-2 leading-relaxed">${project.description}</p>`
+      ? `<p class="font-manrope text-gray-600 mt-2 leading-relaxed text-sm md:text-base">${project.description}</p>`
       : "";
 
-    const delayClass = `transition-all duration-700 delay-[${(index % 3) * 100}ms]`;
+    const delayClass = isMobileOrTablet()
+      ? ""
+      : `fade-up transition-all duration-700 delay-[${(index % 3) * 100}ms]`;
 
     return `
-    <div class="group fade-up ${delayClass}">
+    <div class="group ${delayClass} ${isMobileOrTablet() ? "flex-shrink-0 w-[80vw] max-w-[300px]" : ""}">
       <div class="relative mb-6">
         <div class="absolute top-3 left-3 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-20 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
         <div class="relative w-full aspect-video overflow-hidden border-2 border-brand-brown bg-brand-brown/5">
@@ -160,7 +163,7 @@
           <div class="h-1 w-4 bg-brand-yellow rounded"></div>
           <span class="font-manrope text-xs text-gray-500 uppercase tracking-wider">${project.category}</span>
         </div>
-        <h3 class="font-lexend text-2xl font-bold text-brand-black group-hover:text-brand-brown transition-colors duration-200">
+        <h3 class="font-lexend text-xl md:text-2xl font-bold text-brand-black group-hover:text-brand-brown transition-colors duration-200">
           ${project.title}
         </h3>
         ${descriptionHtml}
@@ -170,7 +173,30 @@
   `;
   }
 
+  function renderMobileScroll() {
+    projectsGrid.className =
+      "flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide";
+    projectsGrid.innerHTML = projectsData
+      .map((project, idx) => createProjectCard(project, idx))
+      .join("");
+
+    // Hide pagination
+    paginationContainer.classList.add("hidden");
+  }
+
+  function renderDesktopPagination() {
+    projectsGrid.className =
+      "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10";
+    projectsPerPage = 3;
+    totalPages = Math.ceil(projectsData.length / projectsPerPage);
+    showPage(currentPage);
+
+    // Show pagination
+    paginationContainer.classList.remove("hidden");
+  }
+
   function createPaginationDots() {
+    const paginationDots = document.getElementById("pagination-dots");
     paginationDots.innerHTML = "";
     for (let i = 1; i <= totalPages; i++) {
       const dot = document.createElement("button");
@@ -191,10 +217,17 @@
       .map((project, idx) => createProjectCard(project, idx))
       .join("");
 
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === totalPages;
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
 
-    const dots = paginationDots.querySelectorAll(".pagination-dot");
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+
+    updatePaginationDots();
+  }
+
+  function updatePaginationDots() {
+    const dots = document.querySelectorAll("#pagination-dots .pagination-dot");
     dots.forEach((dot) => {
       const dotPage = parseInt(dot.getAttribute("data-page"));
       if (dotPage === currentPage) {
@@ -207,19 +240,41 @@
     });
   }
 
-  prevBtn.addEventListener("click", () => {
-    if (currentPage > 1) {
-      showPage(currentPage - 1);
+  function handleResize() {
+    if (isMobileOrTablet()) {
+      renderMobileScroll();
+    } else {
+      renderDesktopPagination();
     }
-  });
+  }
 
-  nextBtn.addEventListener("click", () => {
-    if (currentPage < totalPages) {
-      showPage(currentPage + 1);
-    }
-  });
+  // Event Listeners
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
 
-  // Initialize
-  createPaginationDots();
-  showPage(1);
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        showPage(currentPage - 1);
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < totalPages) {
+        showPage(currentPage + 1);
+      }
+    });
+  }
+
+  window.addEventListener("resize", handleResize);
+
+  // Initial render
+  if (isMobileOrTablet()) {
+    renderMobileScroll();
+  } else {
+    renderDesktopPagination();
+    createPaginationDots();
+  }
 })();

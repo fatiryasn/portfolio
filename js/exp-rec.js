@@ -77,12 +77,14 @@
 
     return `
         <div class="group relative fade-up delay-[0.3s]">
-          <div class="hidden md:flex absolute left-[53px] top-10 w-4 h-4 ${exp.markerColor} rotate-45 border-2 border-brand-brown z-10 group-hover:scale-125 transition-transform duration-300"></div>
-          <div class="ml-0 md:ml-32 relative">
-            <div class="absolute top-3 left-3 w-full h-full border-2 ${exp.shadowColor} opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+          <div class="hidden md:flex absolute left-[10px] top-10 w-4 h-4 ${exp.markerColor} rotate-45 border-2 border-brand-brown z-10 group-hover:scale-125 transition-transform duration-300"></div>
+
+          <div class="ml-0 md:ml-24 lg:ml-32 relative">
+            <div class="absolute top-3 left-[10px] w-full h-full border-2 ${exp.shadowColor} opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+
             <div class="relative bg-brand-white border-2 border-brand-brown p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10">
               <div class="flex-shrink-0">
-                <div class="w-20 h-20 bg-brand-white flex items-center justify-center border-2 border-brand-yellow overflow-hidden">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-white flex items-center justify-center border-2 border-brand-yellow overflow-hidden">
                   <img
                     src="${exp.logo}"
                     alt="${exp.company} logo"
@@ -93,12 +95,12 @@
               <div class="flex-1">
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
                   <div>
-                    <h3 class="font-lexend text-2xl font-bold text-brand-black">${exp.company}</h3>
-                    <p class="font-manrope text-lg text-brand-brown font-medium mt-1">${exp.role}</p>
+                    <h3 class="font-lexend text-xl md:text-2xl font-bold text-brand-black">${exp.company}</h3>
+                    <p class="font-manrope text-base md:text-lg text-brand-brown font-medium mt-1">${exp.role}</p>
                   </div>
-                  <span class="font-manrope text-sm text-gray-500 bg-brand-brown/5 px-3 py-1 border border-brand-brown/10 inline-block w-fit">${exp.period}</span>
+                  <span class="font-manrope text-xs md:text-sm text-gray-500 bg-brand-brown/5 px-3 py-1 border border-brand-brown/10 inline-block w-fit">${exp.period}</span>
                 </div>
-                <p class="font-manrope text-gray-600 leading-relaxed mt-3">${exp.description}</p>
+                <p class="font-manrope text-sm lg:text-base text-gray-600 leading-relaxed mt-3">${exp.description}</p>
                 <div class="flex flex-wrap gap-2 mt-4">${tagsHtml}</div>
               </div>
             </div>
@@ -114,25 +116,25 @@
   const marquee = document.getElementById("cert-marquee");
   function createCertCard(cert) {
     return `
-        <div class="group relative flex-shrink-0 w-[30rem]">
-          <div class="absolute top-4 left-4 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
-          <div class="relative bg-brand-white border-2 border-brand-brown overflow-hidden h-80 flex flex-col">
+        <div class="group relative flex-shrink-0 w-[16rem] sm:w-[20rem] md:w-[24rem] lg:w-[30rem]">
+          <div class="absolute top-3 sm:top-4 left-3 sm:left-4 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+          <div class="relative bg-brand-white border-2 border-brand-brown overflow-hidden h-48 sm:h-60 md:h-72 lg:h-80 flex flex-col">
             <div class="relative flex-1 overflow-hidden">
               <img
                 src="${cert.image}"
                 alt="${cert.title}"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div class="absolute inset-0 bg-brand-brown/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-8">
-                <p class="font-manrope text-gray-200 text-base leading-relaxed">${cert.description}</p>
-                <div class="mt-6 flex items-center gap-2">
-                  <i class="bi bi-calendar-check text-brand-yellow text-lg"></i>
-                  <span class="font-manrope text-brand-yellow text-base font-medium">Issued ${cert.date}</span>
+              <div class="absolute inset-0 bg-brand-brown/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4 sm:p-6 md:p-8">
+                <p class="font-manrope text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">${cert.description}</p>
+                <div class="mt-4 sm:mt-6 flex items-center gap-2">
+                  <i class="bi bi-calendar-check text-brand-yellow text-base sm:text-lg"></i>
+                  <span class="font-manrope text-brand-yellow text-sm sm:text-base font-medium">Issued ${cert.date}</span>
                 </div>
               </div>
             </div>
-            <div class="absolute bottom-0 right-0 bg-brand-white border-t-2 rounded-tl-lg border-l-2 border-brand-brown px-5 py-3">
-              <h4 class="font-grotesk text-sm font-bold text-brand-black text-right">${cert.title}</h4>
+            <div class="absolute bottom-0 right-0 bg-brand-white border-t-2 rounded-tl-lg border-l-2 border-brand-brown px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3">
+              <h4 class="font-grotesk text-xs sm:text-sm font-bold text-brand-black text-right line-clamp-1 max-w-[180px] sm:max-w-[220px] md:max-w-none">${cert.title}</h4>
             </div>
           </div>
         </div>
