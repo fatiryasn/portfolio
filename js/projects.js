@@ -12,6 +12,17 @@
       githubLink: "",
     },
     {
+      image: "./assets/projects/mustika-traso.png",
+      alt: "Mustika Traso",
+      category: "Full Stack",
+      title: "Mustika Traso",
+      description:
+        "A modern landing page for a precast concrete company, with basic custom CMS / admin control.",
+      tags: ["Next.js", "Supabase", "SEO", "Tailwind"],
+      liveLink: "https://mustikatraso.com",
+      githubLink: "",
+    },
+    {
       image: "./assets/projects/falaah-ds.png",
       alt: "Falaah Digital Solutions",
       category: "Frontend",

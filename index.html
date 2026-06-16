@@ -26,6 +26,7 @@
       /* globals */
       html {
         scroll-behavior: smooth;
+        font-size: 14px;
       }
 
       :root {
@@ -146,12 +147,11 @@
 
         will-change: opacity, transform;
       }
-
       .fade-up.visible {
         opacity: 1;
         transform: translateY(0);
       }
-      
+
       .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -205,15 +205,6 @@
       <div
         class="absolute inset-0 blueprint-grid pointer-events-none opacity-30 z-0"
       ></div>
-      <div
-        class="absolute top-20 right-[5%] w-40 h-40 border-t-2 border-l-2 border-brand-yellow/30 pointer-events-none z-0 hidden lg:block"
-      ></div>
-      <div
-        class="absolute bottom-[15%] left-[2%] w-28 h-28 border-b-2 border-r-2 border-brand-brown/20 pointer-events-none z-0 hidden lg:block"
-      ></div>
-      <div
-        class="absolute top-[30%] left-[12%] w-12 h-12 bg-brand-yellow/5 rounded-full blur-2xl pointer-events-none"
-      ></div>
 
       <!-- main container -->
       <div
@@ -225,7 +216,7 @@
           <!-- left -->
           <div class="flex-1 relative z-20">
             <!-- intro & roles -->
-            <div class="fade-up delay-[0.4s] flex flex-col mb-8">
+            <div class="fade-up delay-[200ms] flex flex-col mb-8">
               <div class="items-center gap-3 hidden sm:flex">
                 <div class="w-8 h-px bg-brand-yellow"></div>
                 <span
@@ -245,7 +236,7 @@
             <!-- name -->
             <div class="relative">
               <div
-                class="flex flex-wrap items-baseline gap-1 fade-up delay-[0.5s]"
+                class="flex flex-wrap items-baseline gap-1 fade-up delay-[500ms]"
               >
                 <h1
                   class="text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7rem] font-editorial font-black leading-[0.9] tracking-tightest text-brand-black fade-up"
@@ -258,13 +249,13 @@
               </div>
               <div class="mt-2 -ml-1">
                 <h1
-                  class="text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7rem] font-editorial font-black leading-[0.9] tracking-tightest text-outline fade-up delay-[0.6s]"
+                  class="text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7rem] font-editorial font-black leading-[0.9] tracking-tightest text-outline fade-up delay-[600ms]"
                 >
                   AHMAD
                 </h1>
               </div>
               <div
-                class="mt-2 flex items-center flex-wrap gap-3 fade-up delay-[0.7s]"
+                class="mt-2 flex items-center flex-wrap gap-3 fade-up delay-[700ms]"
               >
                 <h1
                   class="text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] xl:text-[7rem] font-editorial font-black leading-[0.9] tracking-tightest text-brand-black"
@@ -273,13 +264,13 @@
                 </h1>
               </div>
               <div
-                class="w-24 h-[3px] bg-brand-black mt-6 mb-5 fade-up delay-[0.8s]"
+                class="w-24 h-[3px] bg-brand-black mt-6 mb-5 fade-up delay-[800ms]"
               ></div>
             </div>
 
             <!-- statement -->
             <div
-              class="fade-up delay-[1s] max-w-md mt-5 hidden lg:inline-block"
+              class="fade-up delay-[100ms] md:delay-[1s] max-w-md mt-5 hidden lg:inline-block"
             >
               <p
                 class="font-grotesk text-base md:text-lg text-brand-brown/80 leading-relaxed tracking-wide border-l-3 border-brand-yellow pl-5"
@@ -292,7 +283,7 @@
 
             <!-- CTA -->
             <div
-              class="fade-up delay-[1.05s] flex md:items-center gap-5 mt-10 hidden lg:inline-block"
+              class="fade-up delay-[200ms] md:delay-[1.05s] flex md:items-center gap-5 mt-10 hidden lg:inline-block"
             >
               <a
                 href="https://wa.me/6281234567890"
@@ -318,32 +309,23 @@
           <!-- right -->
           <div class="flex-1 relative mt-2 lg:mt-0 lg:-mr-8 z-10">
             <div class="relative">
-              <div
-                class="absolute -top-6 -left-6 w-full h-full border-2 border-brand-yellow/50 pointer-events-none z-0 hidden md:block fade-up delay-[1s]"
-              ></div>
-
               <!-- image -->
               <div
                 class="fade-up delay-[1s] relative overflow-hidden img-clip-editorial shadow-2xl z-10"
               >
                 <div
-                  class="relative w-full max-w-lg lg:max-w-none mx-auto h-96 md:h-[30rem] lg:h-[37rem] xl:h-[45rem]"
+                  class="relative w-full max-w-lg lg:max-w-none mx-auto h-[28rem] md:h-[30rem] lg:h-[37rem] xl:h-[45rem]"
                 >
                   <div
                     class="absolute inset-0 image-overlay-gradient z-10 mix-blend-multiply pointer-events-none"
                   ></div>
                   <img
-                    src="./assets/common/profile-image.png"
+                    src="./assets/common/profile-image.jpeg"
                     alt="Fatir Ahmad Yasin"
                     class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </div>
               </div>
-
-              <!-- decorative  -->
-              <div
-                class="absolute -bottom-8 -right-8 w-32 h-32 border-b-4 border-r-4 border-brand-yellow/40 z-0 hidden lg:block"
-              ></div>
 
               <!-- social media -->
               <div
@@ -416,14 +398,6 @@
           </div>
         </div>
       </div>
-
-      <!-- decorative -->
-      <div
-        class="absolute bottom-[10%] left-[3%] w-20 h-20 bg-brand-yellow/5 rounded-full blur-3xl pointer-events-none z-0 floating-medium"
-      ></div>
-      <div
-        class="absolute top-[25%] right-[2%] w-32 h-32 border border-brand-brown/10 rounded-full pointer-events-none z-0 hidden xl:block"
-      ></div>
     </section>
 
     <!-- motto -->
@@ -431,30 +405,20 @@
       class="px-5 pt-24 pb-5 relative bg-brand-brown flex items-center overflow-hidden"
     >
       <!-- decorative -->
-      <div class="absolute inset-0 opacity-5">
-        <div
-          class="absolute top-20 left-20 w-64 h-64 border-4 border-brand-yellow rounded-full"
-        ></div>
-        <div
-          class="absolute bottom-20 right-20 w-96 h-96 border-4 border-brand-yellow rounded-full"
-        ></div>
-        <div
-          class="absolute top-1/2 left-1/3 w-48 h-48 border-2 border-brand-yellow rounded-full"
-        ></div>
-      </div>
+
       <div
         class="hidden md:flex gap-4 absolute left-5 top-1/2 -translate-y-1/2"
       >
-        <div class="h-64 w-3 bg-brand-yellow fade-up delay-[0.4s]"></div>
-        <div class="h-48 w-3 bg-brand-yellow/80 fade-up delay-[0.6s]"></div>
-        <div class="h-32 w-3 bg-brand-yellow/50 fade-up delay-[0.8s]"></div>
+        <div class="h-64 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
+        <div class="h-48 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
+        <div class="h-32 w-3 bg-brand-yellow/50 fade-up delay-[600ms]"></div>
       </div>
       <div
         class="hidden md:flex gap-4 absolute right-5 top-1/2 -translate-y-1/2"
       >
-        <div class="h-32 w-3 bg-brand-yellow/50 fade-up delay-[0.8s]"></div>
-        <div class="h-48 w-3 bg-brand-yellow/80 fade-up delay-[0.6s]"></div>
-        <div class="h-64 w-3 bg-brand-yellow fade-up delay-[0.4s]"></div>
+        <div class="h-32 w-3 bg-brand-yellow/50 fade-up delay-[600ms]"></div>
+        <div class="h-48 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
+        <div class="h-64 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
       </div>
 
       <!-- main -->
@@ -462,23 +426,23 @@
         <div class="text-center mb-20">
           <div class="inline-block relative">
             <h2
-              class="font-jost text-5xl md:text-6xl xl:text-7xl font-bold text-brand-white leading-tight fade-up delay-[0.3s]"
+              class="font-jost text-5xl md:text-6xl xl:text-7xl font-bold text-brand-white leading-tight fade-up delay-[100ms]"
             >
               <span class="text-brand-yellow">Curiosity</span><br />
               fuels growth<span class="text-brand-yellow">.</span>
             </h2>
             <div class="mt-4 md:mt-6 flex justify-center gap-2">
-              <div class="w-16 h-1 bg-brand-yellow fade-up delay-[0.5s]"></div>
+              <div class="w-16 h-1 bg-brand-yellow fade-up delay-[200ms]"></div>
               <div
-                class="w-8 h-1 bg-brand-yellow/60 fade-up delay-[0.54s]"
+                class="w-8 h-1 bg-brand-yellow/60 fade-up delay-[250ms]"
               ></div>
               <div
-                class="w-4 h-1 bg-brand-yellow/30 fade-up delay-[0.58s]"
+                class="w-4 h-1 bg-brand-yellow/30 fade-up delay-[300ms]"
               ></div>
             </div>
           </div>
           <p
-            class="font-grotesk md:text-lg xl:text-xl text-gray-200 mt-4 md:mt-8 max-w-2xl mx-auto leading-relaxed fade-up delay-[0.7s]"
+            class="font-grotesk md:text-lg xl:text-xl text-gray-200 mt-4 md:mt-8 max-w-2xl mx-auto leading-relaxed fade-up delay-[400ms]"
           >
             Always learning, building, and exploring new ideas through
             technology and creativity.
@@ -487,7 +451,9 @@
 
         <!-- cards -->
         <div class="flex flex-wrap justify-center gap-8 px-5">
-          <div class="w-full sm:w-[45%] lg:w-[30%] group relative fade-up delay-[0.5s]">
+          <div
+            class="w-full sm:w-[45%] lg:w-[30%] group relative fade-up delay-[100ms] md:delay-[500ms]"
+          >
             <div
               class="absolute inset-0 bg-brand-yellow transform rotate-3 transition-transform group-hover:rotate-6"
             ></div>
@@ -536,7 +502,9 @@
               </ul>
             </div>
           </div>
-          <div class="w-full sm:w-[45%] lg:w-[30%] group relative fade-up delay-[0.5s] md:delay-[0.7s]">
+          <div
+            class="w-full sm:w-[45%] lg:w-[30%] group relative fade-up delay-[100ms] md:delay-[600ms]"
+          >
             <div
               class="absolute inset-0 bg-brand-yellow transform rotate-3 transition-transform group-hover:rotate-6"
             ></div>
@@ -617,7 +585,9 @@
               </div>
             </div>
           </div>
-          <div class="w-full sm:w-[45%] lg:w-[30%] group relative fade-up delay-[0.5s] md:delay-[0.9s]">
+          <div
+            class="w-full sm:w-[45%] lg:w-[30%] group relative fade-up delay-[100ms] md:delay-[700ms]"
+          >
             <div
               class="absolute inset-0 bg-brand-yellow transform rotate-3 transition-transform group-hover:rotate-6"
             ></div>
@@ -694,53 +664,46 @@
       class="pl-5 md:pl-10 lg:px-16 py-24 relative flex items-center overflow-hidden"
       id="projects"
     >
-      <div class="absolute inset-0 opacity-5">
-        <div
-          class="absolute top-20 right-20 w-64 h-64 border-4 border-brand-brown rounded-full"
-        ></div>
-        <div
-          class="absolute bottom-20 left-20 w-48 h-48 border-2 border-brand-brown rotate-45"
-        ></div>
-      </div>
+      <!-- decoratives -->
       <div
         class="hidden lg:flex gap-4 absolute left-5 top-1/3 -translate-y-1/2"
       >
-        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[0.4s]"></div>
-        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[0.6s]"></div>
-        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[0.8s]"></div>
+        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
+        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
+        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[600s]"></div>
       </div>
       <div
         class="hidden lg:flex gap-4 absolute right-5 top-2/3 -translate-y-1/2"
       >
-        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[0.8s]"></div>
-        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[0.6s]"></div>
-        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[0.4s]"></div>
+        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[600s]"></div>
+        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
+        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
       </div>
       <div class="relative z-10 w-full max-w-7xl mx-auto">
-        <div class="mb-20">
+        <div class="mb-20 pr-5">
           <div class="inline-block relative">
             <span
-              class="absolute -top-6 left-0 text-brand-yellow font-grotesk text-xs md:text-sm tracking-widest uppercase fade-up delay-[0.3s]"
+              class="absolute -top-6 left-0 text-brand-yellow font-grotesk text-xs md:text-sm tracking-widest uppercase fade-up delay-[100ms]"
               >Portfolio</span
             >
             <h2
-              class="font-jost text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black leading-tight fade-up delay-[0.5s]"
+              class="font-jost text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black leading-tight fade-up delay-[200ms]"
             >
               Selected<br /><span class="text-brand-brown">Projects</span
               ><span class="text-brand-yellow">.</span>
             </h2>
             <div class="mt-6 flex gap-2">
-              <div class="w-16 h-1 bg-brand-yellow fade-up delay-[0.6s]"></div>
+              <div class="w-16 h-1 bg-brand-yellow fade-up delay-[300ms]"></div>
               <div
-                class="w-8 h-1 bg-brand-brown/60 fade-up delay-[0.64s]"
+                class="w-8 h-1 bg-brand-brown/60 fade-up delay-[350ms]"
               ></div>
               <div
-                class="w-4 h-1 bg-brand-brown/30 fade-up delay-[0.68s]"
+                class="w-4 h-1 bg-brand-brown/30 fade-up delay-[400ms]"
               ></div>
             </div>
           </div>
           <p
-            class="font-manrope text-sm md:text-base lg:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[0.7s]"
+            class="font-manrope text-sm md:text-base lg:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[500ms]"
           >
             A curated collection of work that showcases my approach to building
             digital experiences.
@@ -771,39 +734,29 @@
 
     <!-- experience/recognition -->
     <section
-      class="md:px-8 py-24 relative flex items-center overflow-hidden bg-brand-white"
+      class="px-5 lg:px-16 py-24 relative flex items-center overflow-hidden bg-brand-white"
     >
-      <div class="absolute inset-0 opacity-5">
-        <div
-          class="absolute top-40 left-20 w-72 h-72 border-4 border-brand-brown rounded-full"
-        ></div>
-        <div
-          class="absolute bottom-40 right-20 w-56 h-56 border-2 border-brand-yellow rotate-45"
-        ></div>
-        <div
-          class="absolute top-1/2 left-1/2 w-4 h-4 bg-brand-yellow rotate-45 -translate-x-1/2 -translate-y-1/2"
-        ></div>
-      </div>
+      <!-- decoratives -->
       <div class="hidden lg:flex gap-4 absolute left-5 top-1/4">
-        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[0.4s]"></div>
-        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[0.6s]"></div>
-        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[0.8s]"></div>
+        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
+        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
+        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[600ms]"></div>
       </div>
       <div class="hidden lg:flex gap-4 absolute right-5 bottom-1/4">
-        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[0.8s]"></div>
-        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[0.6s]"></div>
-        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[0.4s]"></div>
+        <div class="h-24 w-3 bg-brand-yellow/50 fade-up delay-[600ms]"></div>
+        <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
+        <div class="h-48 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
       </div>
       <div class="relative z-10 w-full">
-        <div class="max-w-7xl mx-auto px-5 md:px-0">
+        <div class="max-w-7xl mx-auto">
           <div class="mb-24">
             <div class="inline-block relative">
               <span
-                class="absolute -top-6 left-0 text-brand-yellow font-grotesk text-xs md:text-sm tracking-widest uppercase fade-up delay-[0.3s]"
+                class="absolute -top-6 left-0 text-brand-yellow font-grotesk text-xs md:text-sm tracking-widest uppercase fade-up delay-[100ms]"
                 >Career</span
               >
               <h2
-                class="font-jost text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black leading-tight fade-up delay-[0.5s]"
+                class="font-jost text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black leading-tight fade-up delay-[200ms]"
               >
                 Experience<span class="text-brand-yellow">.</span><br /><span
                   class="text-brand-brown"
@@ -812,18 +765,18 @@
               </h2>
               <div class="mt-6 flex gap-2">
                 <div
-                  class="w-16 h-1 bg-brand-yellow fade-up delay-[0.52s]"
+                  class="w-16 h-1 bg-brand-yellow fade-up delay-[300ms]"
                 ></div>
                 <div
-                  class="w-8 h-1 bg-brand-brown/60 fade-up delay-[0.56s]"
+                  class="w-8 h-1 bg-brand-brown/60 fade-up delay-[350ms]"
                 ></div>
                 <div
-                  class="w-4 h-1 bg-brand-brown/30 fade-up delay-[0.6s]"
+                  class="w-4 h-1 bg-brand-brown/30 fade-up delay-[400ms]"
                 ></div>
               </div>
             </div>
             <p
-              class="font-manrope text-sm md:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[0.6s]"
+              class="font-manrope text-sm md:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[500ms]"
             >
               A timeline of growth, craftsmanship, and milestones that shaped
               the developer I am today.
@@ -836,13 +789,11 @@
             <div id="experience-list" class="space-y-12"></div>
           </div>
         </div>
-        <div class="mt-24">
-          <div class="relative overflow-hidden">
-            <div
-              id="cert-marquee"
-              class="flex gap-4 md:gap-6 lg:gap-10 py-4"
-            ></div>
-          </div>
+        <div class="mt-24 md:px-16 xl:px-24 ">
+          <div
+            id="cert-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 lg:gap-10 py-4"
+          ></div>
         </div>
       </div>
     </section>
@@ -856,19 +807,9 @@
       ></path>
     </svg>
     <section
-      class="px-5 lg:px-16 pb-8 pt-4 relative flex items-center overflow-hidden bg-brand-brown"
+      class="px-5 md:px-16 pb-8 pt-4 relative flex items-center overflow-hidden bg-brand-brown"
     >
-      <div class="absolute inset-0 opacity-5">
-        <div
-          class="absolute top-20 right-20 w-80 h-80 border-4 border-brand-yellow rounded-full"
-        ></div>
-        <div
-          class="absolute bottom-20 left-20 w-56 h-56 border-2 border-brand-yellow rotate-45"
-        ></div>
-        <div
-          class="absolute top-1/3 left-1/2 w-3 h-3 bg-brand-yellow rotate-45"
-        ></div>
-      </div>
+      <!-- decoratives -->
       <div
         class="hidden md:flex gap-4 absolute left-5 top-1/2 -translate-y-1/2"
       >

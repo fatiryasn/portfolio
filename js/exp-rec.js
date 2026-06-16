@@ -16,11 +16,11 @@
     {
       logo: "./assets/company-logos/telkom-akses.jpg",
       company: "Telkom Akses",
-      role: "IT Intern",
+      role: "Network Operations (Intern)",
       period: "Jul 2025 — Nov 2025",
       description:
         "Conducted system assessments and validation processes while developing automation tools to improve operational efficiency, accuracy, and scalable business solutions.",
-      tags: ["Node.js", "Electron", "API Integration"],
+      tags: ["Node.js", "FO Networks", "Operations"],
       markerColor: "bg-brand-brown",
       shadowColor: "border-brand-brown bg-brand-brown",
     },
@@ -65,7 +65,7 @@
     },
   ];
 
-  //render
+  //experiences
   const experienceList = document.getElementById("experience-list");
   function createExperienceCard(exp) {
     const tagsHtml = exp.tags
@@ -76,7 +76,7 @@
       .join("");
 
     return `
-        <div class="group relative fade-up delay-[0.3s]">
+        <div class="group relative fade-up delay-[100ms]">
           <div class="hidden md:flex absolute left-[10px] top-10 w-4 h-4 ${exp.markerColor} rotate-45 border-2 border-brand-brown z-10 group-hover:scale-125 transition-transform duration-300"></div>
 
           <div class="ml-0 md:ml-24 lg:ml-32 relative">
@@ -108,65 +108,42 @@
         </div>
       `;
   }
-
   experienceList.innerHTML = experienceData
     .map((exp) => createExperienceCard(exp))
     .join("");
 
-  const marquee = document.getElementById("cert-marquee");
-  function createCertCard(cert) {
+  //certificates
+  const certGrid = document.getElementById("cert-grid");
+  function createCertCard(cert, index) {
+    const delayMs = index * 75;
+
     return `
-        <div class="group relative flex-shrink-0 w-[16rem] sm:w-[20rem] md:w-[24rem] lg:w-[30rem]">
-          <div class="absolute top-3 sm:top-4 left-3 sm:left-4 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
-          <div class="relative bg-brand-white border-2 border-brand-brown overflow-hidden h-48 sm:h-60 md:h-72 lg:h-80 flex flex-col">
-            <div class="relative flex-1 overflow-hidden">
-              <img
-                src="${cert.image}"
-                alt="${cert.title}"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-brand-brown/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4 sm:p-6 md:p-8">
-                <p class="font-manrope text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">${cert.description}</p>
-                <div class="mt-4 sm:mt-6 flex items-center gap-2">
-                  <i class="bi bi-calendar-check text-brand-yellow text-base sm:text-lg"></i>
-                  <span class="font-manrope text-brand-yellow text-sm sm:text-base font-medium">Issued ${cert.date}</span>
-                </div>
-              </div>
-            </div>
-            <div class="absolute bottom-0 right-0 bg-brand-white border-t-2 rounded-tl-lg border-l-2 border-brand-brown px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3">
-              <h4 class="font-grotesk text-xs sm:text-sm font-bold text-brand-black text-right line-clamp-1 max-w-[180px] sm:max-w-[220px] md:max-w-none">${cert.title}</h4>
+    <div class="group relative fade-up delay-[${delayMs}ms]">
+      <div class="absolute top-3 sm:top-4 left-3 sm:left-4 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+      <div class="relative bg-brand-white border-2 border-brand-brown overflow-hidden aspect-[1.414] w-full flex flex-col">
+        <div class="relative flex-1 overflow-hidden">
+          <img
+            src="${cert.image}"
+            alt="${cert.title}"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-brand-brown/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4 sm:p-6 md:p-8">
+            <p class="font-manrope text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">${cert.description}</p>
+            <div class="mt-4 sm:mt-6 flex items-center gap-2">
+              <i class="bi bi-calendar-check text-brand-yellow text-base sm:text-lg"></i>
+              <span class="font-manrope text-brand-yellow text-sm sm:text-base font-medium">Issued ${cert.date}</span>
             </div>
           </div>
         </div>
-      `;
+        <div class="absolute bottom-0 right-0 bg-brand-white border-t-2 rounded-tl-lg border-l-2 border-brand-brown px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3">
+          <h4 class="font-grotesk text-xs sm:text-sm font-bold text-brand-black text-right line-clamp-1 max-w-[180px] sm:max-w-[220px] md:max-w-none">${cert.title}</h4>
+        </div>
+      </div>
+    </div>
+  `;
   }
 
-  const cardsHtml = certificationsData
-    .map((cert) => createCertCard(cert))
+  certGrid.innerHTML = certificationsData
+    .map((cert, i) => createCertCard(cert, i))
     .join("");
-  marquee.innerHTML = cardsHtml + cardsHtml;
-
-  // Pause on hover
-  marquee.addEventListener("mouseenter", () => {
-    marquee.style.animationPlayState = "paused";
-  });
-  marquee.addEventListener("mouseleave", () => {
-    marquee.style.animationPlayState = "running";
-  });
-
-  // Inject keyframes
-  const style = document.createElement("style");
-  const cardWidth = 448 + 24; // w-[28rem] + gap-6
-  const totalWidth = cardWidth * certificationsData.length;
-  style.textContent = `
-      @keyframes marqueeScroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-${totalWidth}px); }
-      }
-      #cert-marquee:hover {
-        animation-play-state: paused;
-      }
-    `;
-  document.head.appendChild(style);
-  marquee.style.animation = `marqueeScroll ${certificationsData.length * 8}s linear infinite`;
 })();
