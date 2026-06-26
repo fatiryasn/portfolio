@@ -3,7 +3,6 @@
   const experienceData = [
     {
       logo: "./assets/company-logos/falaah-digital-solutions.png",
-
       company: "Falaah Digital Solutions",
       role: "Full Stack Developer",
       period: "Feb 2025 — Present",
@@ -30,42 +29,55 @@
   const certificationsData = [
     {
       image: "./assets/certifications/1st.png",
-      title: "1st place, IT Software Solutions for Business",
+      title: "IT Software Solutions for Business",
       date: "May 2025",
       description:
-        "Medan City Student Competency Competition (LKS) in IT Software Solutions for Business by North Sumatera Department of Education",
+        "1st Place in 2025 Student Competency Competition (LKS) in IT Software Solutions for Business category.",
+      issuer: "North Sumatera Department of Education",
     },
     {
-      image: "./assets/certifications/finalist.png",
-      title: "Finalist IT Software Solutions for Business",
+      image: "./assets/certifications/participant.png",
+      title: "IT Software Solutions for Business",
       date: "Oct 2024",
       description:
-        "National WorldSkills Selection in IT Software Solutions for Business by Republic Indonesia Ministry of Manpower",
+        "Participant in Indonesia National Selection for 2025 ASEAN WorldSkills in IT Software Solutions for Business category",
+      issuer: "Republic of Indonesia Ministry of Manpower ",
     },
     {
       image: "./assets/certifications/react.png",
       title: "React Developer Certification",
       date: "Apr 2025",
       description:
-        "HackerRank — React, component architecture, state management, and responsive UI.",
+        "React, component architecture, state management, and responsive UI.",
+      issuer: "HackerRank",
     },
     {
       image: "./assets/certifications/mobile.png",
       title: "Mobile Developer Certification",
       date: "Feb 2025",
       description:
-        "PT. Potensi Karya Mandiri — Cross-platform mobile development, performance, and modern workflows.",
+        "Kotlin programming and Android Studio for mobile development.",
+      issuer: "PT. Potensi Karya Mandiri",
     },
     {
       image: "./assets/certifications/vibecode.png",
       title: "Vibecoding with Antigravity",
       date: "Mar 2026",
       description:
-        "Dream Digital Indonesia — Rapid prototyping and creative product building.",
+        "Rapid prototyping and creative website building using Google Antigravity.",
+      issuer: "Dream Digital Indonesia",
+    },
+    {
+      image: "./assets/certifications/jvc.jpg",
+      title: "#JuaraVibeCoding",
+      date: "Jun 2026",
+      description:
+        "Building project with Google AI Studio and deploy in Cloud Run.",
+      issuer: "GDG Indonesia",
     },
   ];
 
-  //experiences
+  //EXPERIENCES
   const experienceList = document.getElementById("experience-list");
   function createExperienceCard(exp) {
     const tagsHtml = exp.tags
@@ -82,9 +94,9 @@
           <div class="ml-0 md:ml-24 lg:ml-32 relative">
             <div class="absolute top-3 left-[10px] w-full h-full border-2 ${exp.shadowColor} opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
 
-            <div class="relative bg-brand-white border-2 border-brand-brown p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-10">
+            <div class="relative bg-brand-white border-2 border-brand-brown p-8 sm:p-10 flex flex-col sm:flex-row gap-6 sm:gap-10">
               <div class="flex-shrink-0">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-white flex items-center justify-center border-2 border-brand-yellow overflow-hidden">
+                <div class="w-20 h-20 bg-brand-white flex items-center justify-center border-2 border-brand-yellow overflow-hidden">
                   <img
                     src="${exp.logo}"
                     alt="${exp.company} logo"
@@ -93,12 +105,12 @@
                 </div>
               </div>
               <div class="flex-1">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
                   <div>
-                    <h3 class="font-lexend text-xl md:text-2xl font-bold text-brand-black">${exp.company}</h3>
-                    <p class="font-manrope text-base md:text-lg text-brand-brown font-medium mt-1">${exp.role}</p>
+                    <h3 class="font-lexend text-xl sm:text-2xl font-bold text-brand-black">${exp.company}</h3>
+                    <p class="font-manrope text-base sm:text-lg text-brand-brown font-medium mt-1">${exp.role}</p>
                   </div>
-                  <span class="font-manrope text-xs md:text-sm text-gray-500 bg-brand-brown/5 px-3 py-1 border border-brand-brown/10 inline-block w-fit">${exp.period}</span>
+                  <span class="font-manrope text-xs sm:text-sm text-gray-500 bg-brand-brown/5 px-3 py-1 border border-brand-brown/10 inline-block w-fit">${exp.period}</span>
                 </div>
                 <p class="font-manrope text-sm lg:text-base text-gray-600 leading-relaxed mt-3">${exp.description}</p>
                 <div class="flex flex-wrap gap-2 mt-4">${tagsHtml}</div>
@@ -112,8 +124,10 @@
     .map((exp) => createExperienceCard(exp))
     .join("");
 
-  //certificates
+  //CERTIFICATES
   const certGrid = document.getElementById("cert-grid");
+  const MOBILE_VISIBLE_COUNT = 3;
+  let certExpanded = false;
   function createCertCard(cert, index) {
     const delayMs = index * 75;
 
@@ -130,8 +144,12 @@
           <div class="absolute inset-0 bg-brand-brown/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4 sm:p-6 md:p-8">
             <p class="font-manrope text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">${cert.description}</p>
             <div class="mt-4 sm:mt-6 flex items-center gap-2">
+              <i class="bi bi-people text-brand-yellow text-base sm:text-lg"></i>
+              <span class="font-manrope text-brand-yellow text-sm sm:text-base font-medium">${cert.issuer}</span>
+            </div>
+            <div class="mt-2 flex items-center gap-2">
               <i class="bi bi-calendar-check text-brand-yellow text-base sm:text-lg"></i>
-              <span class="font-manrope text-brand-yellow text-sm sm:text-base font-medium">Issued ${cert.date}</span>
+              <span class="font-manrope text-brand-yellow text-sm sm:text-base font-medium">${cert.date}</span>
             </div>
           </div>
         </div>
@@ -143,7 +161,92 @@
   `;
   }
 
-  certGrid.innerHTML = certificationsData
-    .map((cert, i) => createCertCard(cert, i))
-    .join("");
+  //render initial certs
+  function renderInitialCertificates() {
+    const isMobile = window.innerWidth < 640;
+
+    const initialData = isMobile
+      ? certificationsData.slice(0, MOBILE_VISIBLE_COUNT)
+      : certificationsData;
+
+    certGrid.innerHTML = initialData
+      .map((cert, i) => createCertCard(cert, i))
+      .join("");
+
+    updateToggleButton();
+  }
+
+  //append certs
+  function appendRemainingCertificates() {
+    const remaining = certificationsData.slice(MOBILE_VISIBLE_COUNT);
+
+    remaining.forEach((cert, index) => {
+      certGrid.insertAdjacentHTML(
+        "beforeend",
+        createCertCard(cert, index + MOBILE_VISIBLE_COUNT),
+      );
+    });
+  }
+
+  //remove certs
+  function removeExtraCertificates() {
+    const cards = certGrid.children;
+
+    while (cards.length > MOBILE_VISIBLE_COUNT) {
+      cards[cards.length - 1].remove();
+    }
+  }
+
+  //update toggle button
+  function updateToggleButton() {
+    const toggleBtn = document.getElementById("cert-toggle-btn");
+
+    if (!toggleBtn) return;
+
+    const isMobile = window.innerWidth < 640;
+
+    if (!isMobile || certificationsData.length <= MOBILE_VISIBLE_COUNT) {
+      toggleBtn.parentElement.classList.add("hidden");
+      return;
+    }
+
+    toggleBtn.parentElement.classList.remove("hidden");
+
+    const label = toggleBtn.querySelector("span");
+    const icon = toggleBtn.querySelector("i");
+
+    label.textContent = certExpanded ? "Show Less" : "Show More";
+    icon.classList.toggle("rotate-180", certExpanded);
+  }
+
+  //cert toggle button
+  const certToggleBtn = document.getElementById("cert-toggle-btn");
+  certToggleBtn?.addEventListener("click", () => {
+    certExpanded = !certExpanded;
+
+    if (certExpanded) {
+      appendRemainingCertificates();
+    } else {
+      removeExtraCertificates();
+
+      certGrid.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    updateToggleButton();
+  });
+
+  renderInitialCertificates();
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+      certExpanded = false;
+      renderInitialCertificates();
+    }, 150);
+  });
 })();

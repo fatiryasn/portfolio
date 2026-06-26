@@ -1,5 +1,5 @@
 (function () {
-  const roles = ["IT Developer", "System Architect", "SEO Specialist"];
+  const roles = ["IT Developer", "SEO Specialist"];
   let index = 0,
     charIndex = 0,
     isDeleting = false;

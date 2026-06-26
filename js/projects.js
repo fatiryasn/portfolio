@@ -1,17 +1,6 @@
 (function () {
   const projectsData = [
     {
-      image: "./assets/projects/porlu-coffee.png",
-      alt: "PorluCoffee",
-      category: "Frontend",
-      title: "PorluCoffee",
-      description:
-        "A modern landing page for a specialty coffee brand, optimized for performance and search visibility.",
-      tags: ["Next.js", "SEO", "Tailwind"],
-      liveLink: "https://porlucoffee.com",
-      githubLink: "",
-    },
-    {
       image: "./assets/projects/mustika-traso.png",
       alt: "Mustika Traso",
       category: "Full Stack",
@@ -23,47 +12,14 @@
       githubLink: "",
     },
     {
-      image: "./assets/projects/falaah-ds.png",
-      alt: "Falaah Digital Solutions",
-      category: "Frontend",
-      title: "Falaah Digital Solutions",
-      description:
-        "Company profile website for a digital solutions agency with clean design and fast load times.",
-      tags: ["Next.js", "SEO", "Tailwind"],
-      liveLink: "https://f-ds.vercel.app",
-      githubLink: "",
-    },
-    {
       image: "./assets/projects/inklusi-kerja.png",
       alt: "InklusiKerja",
       category: "Full Stack",
       title: "InklusiKerja",
       description:
-        "A job platform connecting inclusive employers with diverse talent, featuring profile management and job listings.",
+        "A job platform connecting inclusive employers with diverse talent",
       tags: ["React.js", "Express.js", "MongoDB"],
       liveLink: "https://disabilitas-web.vercel.app/profile",
-      githubLink: "",
-    },
-    {
-      image: "./assets/projects/wfm.png",
-      alt: "WFM Bot",
-      category: "Automation",
-      title: "WFM Bot",
-      description:
-        "Telegram bot that automates workforce management tasks including scheduling, attendance tracking, and reporting.",
-      tags: ["Node.js", "Telegram API", "Web Scraping"],
-      liveLink: "",
-      githubLink: "https://github.com/fatiryasn/WFM-Bot",
-    },
-    {
-      image: "./assets/projects/portfolio.png",
-      alt: "Personal Portfolio",
-      category: "Frontend",
-      title: "Personal Portfolio",
-      description:
-        "A responsive portfolio website showcasing my projects and skills, built with modern web technologies.",
-      tags: ["JavaScript", "Tailwind"],
-      liveLink: "https://fatirayp.vercel.app",
       githubLink: "",
     },
     {
@@ -72,10 +28,53 @@
       category: "Full Stack",
       title: "FalaahPOS",
       description:
-        "Point of sale system with inventory management, sales tracking, and real-time reporting dashboard.",
+        "POS system with inventory management, sales tracking, and real-time reporting dashboard.",
       tags: ["React.js", "Express.js", "MySQL"],
       liveLink: "",
       githubLink: "",
+    },
+    {
+      image: "./assets/projects/porlu-coffee.png",
+      alt: "PorluCoffee",
+      category: "Frontend",
+      title: "PorluCoffee",
+      description:
+        "A modern landing page for a coffee brand, optimized for performance and search visibility.",
+      tags: ["Next.js", "SEO", "Tailwind"],
+      liveLink: "https://porlucoffee.com",
+      githubLink: "",
+    },
+    {
+      image: "./assets/projects/falaah-ds.png",
+      alt: "Falaah Digital Solutions",
+      category: "Frontend",
+      title: "Falaah Digital Solutions",
+      description:
+        "Company profile website for a digital solutions agency with clean design.",
+      tags: ["Next.js", "SEO", "Tailwind"],
+      liveLink: "https://f-ds.vercel.app",
+      githubLink: "",
+    },
+    {
+      image: "./assets/projects/portfolio.png",
+      alt: "Personal Portfolio",
+      category: "Frontend",
+      title: "Personal Portfolio",
+      description: "A portfolio website showcasing my projects and skills in software engineering.",
+      tags: ["JavaScript", "Tailwind"],
+      liveLink: "https://fatirayp.vercel.app",
+      githubLink: "",
+    },
+    {
+      image: "./assets/projects/wfm.png",
+      alt: "WFM Bot",
+      category: "Automation",
+      title: "WFM Bot",
+      description:
+        "Telegram bot for automating incident tickets distribution & workforce management.",
+      tags: ["Node.js", "Telegram API", "Web Scraping"],
+      liveLink: "",
+      githubLink: "https://github.com/fatiryasn/WFM-Bot",
     },
     {
       image: "./assets/projects/ctu.png",
@@ -83,7 +82,7 @@
       category: "Automation",
       title: "CTU Agent",
       description:
-        "Desktop application for automated data collection and processing, built with Electron for cross-platform support.",
+        "Desktop application for automating hundreds incident tickets creation everyday.",
       tags: ["Node.js", "Electron", "Web Scraping"],
       liveLink: "",
       githubLink: "https://github.com/fatiryasn/CTU-Agent",
@@ -91,79 +90,64 @@
   ];
 
   const projectsGrid = document.getElementById("projects-grid");
-  const paginationContainer = document.getElementById("pagination-container");
-  const scrollContainer = document.getElementById("scroll-container");
-  let currentPage = 1;
-  let projectsPerPage = 3;
-  let totalPages = Math.ceil(projectsData.length / projectsPerPage);
+  const btnPrev = document.getElementById("btn-prev");
+  const btnNext = document.getElementById("btn-next");
 
-  function isMobileOrTablet() {
-    return window.innerWidth < 1024;
+  //is desktop
+  function isDesktop() {
+    return window.innerWidth >= 1024;
   }
 
+  //create project card
   function createProjectCard(project, index) {
     const tagsHtml = project.tags
       .map(
-        (tag) => `
-        <span class="px-2 py-1 text-xs font-manrope bg-brand-brown/10 text-brand-brown border border-brand-brown/20 whitespace-nowrap">${tag}</span>
-      `,
+        (tag) =>
+          `<span class="px-2 py-1 text-xs font-manrope bg-brand-brown/10 text-brand-brown border border-brand-brown/20 whitespace-nowrap">${tag}</span>`,
       )
       .join("");
 
     const liveBtn = project.liveLink
-      ? `
-          <a
-            href="${project.liveLink}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 bg-brand-yellow flex items-center justify-center border border-brand-brown hover:bg-brand-yellow-light transition-colors duration-200"
-          >
+      ? `<a href="${project.liveLink}" target="_blank" rel="noopener noreferrer"
+            class="w-10 h-10 bg-brand-yellow flex items-center justify-center border border-brand-brown hover:bg-brand-yellow-light transition-colors duration-200 cursor-pointer">
             <i class="bi bi-arrow-up-right text-brand-black text-lg"></i>
-          </a>
-        `
+          </a>`
       : "";
 
     const githubBtn = project.githubLink
-      ? `
-          <a
-            href="${project.githubLink}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-10 h-10 bg-brand-white flex items-center justify-center border border-brand-brown hover:bg-gray-100 transition-colors duration-200"
-          >
+      ? `<a href="${project.githubLink}" target="_blank" rel="noopener noreferrer"
+            class="w-10 h-10 bg-brand-white flex items-center justify-center border border-brand-brown hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
             <i class="bi bi-github text-brand-black text-lg"></i>
-          </a>
-        `
+          </a>`
       : "";
 
     const overlayButtons =
       liveBtn || githubBtn
-        ? `
-          <div class="absolute inset-0 bg-brand-brown/0 group-hover:bg-brand-brown/10 transition-colors duration-300 flex items-center justify-center">
+        ? `<div class="absolute inset-0 bg-brand-brown/0 group-hover:bg-brand-brown/10 transition-colors duration-300 flex items-center justify-center">
             <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-3">
               ${liveBtn}
               ${githubBtn}
             </div>
-          </div>
-        `
+          </div>`
         : "";
 
     const descriptionHtml = project.description
-      ? `<p class="font-manrope text-gray-600 mt-2 leading-relaxed text-sm md:text-base">${project.description}</p>`
+      ? `<p class="font-manrope text-gray-600 mt-2 leading-relaxed text-xs sm:text-sm md:text-base">${project.description}</p>`
       : "";
 
-    const delayClass = isMobileOrTablet()
-      ? ""
-      : `fade-up transition-all duration-700 delay-[${(index % 3) * 100}ms]`;
+    const desktopClasses = isDesktop()
+      ? "flex-shrink-0 w-[320px] md:w-[320px] snap-start"
+      : "snap-start w-full";
 
     return `
-    <div class="group ${delayClass} ${isMobileOrTablet() ? "flex-shrink-0 w-[80vw] max-w-[300px]" : ""}">
+    <div class="group ${desktopClasses} transition-all duration-700">
       <div class="relative mb-6">
         <div class="absolute top-3 left-3 w-full h-full border-2 border-brand-yellow bg-brand-yellow opacity-20 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
-        <div class="relative w-full aspect-video overflow-hidden border-2 border-brand-brown bg-brand-brown/5">
+        <div class="relative sm:w-full aspect-video overflow-hidden border-2 border-brand-brown bg-brand-brown/5">
           <img
             src="${project.image}"
             alt="${project.alt}"
+            draggable="false"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           ${overlayButtons}
@@ -184,108 +168,142 @@
   `;
   }
 
-  function renderMobileScroll() {
+  //drag to scroll
+  function enableDragScroll(container) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.style.cursor = "grab";
+
+    container.addEventListener("mousedown", (e) => {
+      isDown = true;
+      container.style.cursor = "grabbing";
+
+      container.style.scrollSnapType = "none";
+      container.style.scrollBehavior = "auto";
+
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      if (!isDown) return;
+      isDown = false;
+      container.style.cursor = "grab";
+      container.style.scrollSnapType = "";
+      container.style.scrollBehavior = "smooth";
+    });
+
+    container.addEventListener("mouseup", () => {
+      if (!isDown) return;
+      isDown = false;
+      container.style.cursor = "grab";
+      container.style.scrollSnapType = "";
+      container.style.scrollBehavior = "smooth";
+    });
+
+    container.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 0.95;
+      container.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  //render for desktop
+  function renderDesktop() {
     projectsGrid.className =
-      "flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide";
+      "flex gap-8 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-12 scrollbar-hide px-1 fade-up delay-[600ms]";
+    projectsGrid.style.gridAutoColumns = "";
+    projectsGrid.style.gridTemplateRows = "";
+    projectsGrid.style.gridAutoFlow = "";
     projectsGrid.innerHTML = projectsData
       .map((project, idx) => createProjectCard(project, idx))
       .join("");
+    enableDragScroll(projectsGrid);
 
-    // Hide pagination
-    paginationContainer.classList.add("hidden");
+    updateFadeIndicators(projectsGrid);
   }
 
-  function renderDesktopPagination() {
+  //render for mobile / tablet
+  function renderMobileOrTablet() {
     projectsGrid.className =
-      "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10";
-    projectsPerPage = 3;
-    totalPages = Math.ceil(projectsData.length / projectsPerPage);
-    showPage(currentPage);
-
-    // Show pagination
-    paginationContainer.classList.remove("hidden");
-  }
-
-  function createPaginationDots() {
-    const paginationDots = document.getElementById("pagination-dots");
-    paginationDots.innerHTML = "";
-    for (let i = 1; i <= totalPages; i++) {
-      const dot = document.createElement("button");
-      dot.className = `pagination-dot w-3 h-3 rounded-full transition-all duration-300 ${i === currentPage ? "bg-brand-brown" : "bg-brand-brown/30 hover:bg-brand-brown/50"}`;
-      dot.setAttribute("data-page", i);
-      dot.addEventListener("click", () => showPage(i));
-      paginationDots.appendChild(dot);
-    }
-  }
-
-  function showPage(pageNumber) {
-    currentPage = pageNumber;
-    const startIndex = (pageNumber - 1) * projectsPerPage;
-    const endIndex = startIndex + projectsPerPage;
-    const pageProjects = projectsData.slice(startIndex, endIndex);
-
-    projectsGrid.innerHTML = pageProjects
+      "grid gap-3 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-7 sm:scroll-pl-12 scrollbar-hide px-1 fade-up delay-[600ms]";
+    projectsGrid.style.gridTemplateRows = "auto auto";
+    projectsGrid.style.gridAutoFlow = "column";
+    projectsGrid.style.gridAutoColumns = "280px";
+    projectsGrid.innerHTML = projectsData
       .map((project, idx) => createProjectCard(project, idx))
       .join("");
+    enableDragScroll(projectsGrid);
 
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-
-    if (prevBtn) prevBtn.disabled = currentPage === 1;
-    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
-
-    updatePaginationDots();
+    updateFadeIndicators(projectsGrid);
   }
 
-  function updatePaginationDots() {
-    const dots = document.querySelectorAll("#pagination-dots .pagination-dot");
-    dots.forEach((dot) => {
-      const dotPage = parseInt(dot.getAttribute("data-page"));
-      if (dotPage === currentPage) {
-        dot.classList.add("bg-brand-brown");
-        dot.classList.remove("bg-brand-brown/30", "hover:bg-brand-brown/50");
-      } else {
-        dot.classList.remove("bg-brand-brown");
-        dot.classList.add("bg-brand-brown/30", "hover:bg-brand-brown/50");
-      }
-    });
+  //fade indicators
+  function updateFadeIndicators(container) {
+    const fadeLeft = document.getElementById("fade-left");
+    const fadeRight = document.getElementById("fade-right");
+
+    if (!fadeLeft || !fadeRight) return;
+
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    const current = container.scrollLeft;
+
+    fadeLeft.style.opacity = current > 20 ? "1" : "0";
+
+    fadeRight.style.opacity = current < maxScroll - 20 ? "1" : "0";
   }
 
-  function handleResize() {
-    if (isMobileOrTablet()) {
-      renderMobileScroll();
+  //layout handler
+  function handleLayout() {
+    if (isDesktop()) {
+      renderDesktop();
     } else {
-      renderDesktopPagination();
+      renderMobileOrTablet();
     }
   }
 
-  // Event Listeners
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
+  //initial render
+  handleLayout();
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      if (currentPage > 1) {
-        showPage(currentPage - 1);
-      }
+
+  //event listeners
+  projectsGrid.addEventListener("scroll", () => {
+    updateFadeIndicators(projectsGrid);
+  });
+  btnPrev?.addEventListener("click", () => {
+    const cardWidth = projectsGrid.firstElementChild
+      ? projectsGrid.firstElementChild.offsetWidth
+      : 360;
+
+    const gap = isDesktop() ? 32 : 12;
+
+    projectsGrid.scrollBy({
+      left: -(cardWidth + gap),
+      behavior: "smooth",
     });
-  }
+  });
+  btnNext?.addEventListener("click", () => {
+    const cardWidth = projectsGrid.firstElementChild
+      ? projectsGrid.firstElementChild.offsetWidth
+      : 360;
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      if (currentPage < totalPages) {
-        showPage(currentPage + 1);
-      }
+    const gap = isDesktop() ? 32 : 12;
+
+    projectsGrid.scrollBy({
+      left: cardWidth + gap,
+      behavior: "smooth",
     });
-  }
+  });
 
-  window.addEventListener("resize", handleResize);
-
-  // Initial render
-  if (isMobileOrTablet()) {
-    renderMobileScroll();
-  } else {
-    renderDesktopPagination();
-    createPaginationDots();
-  }
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(handleLayout, 150);
+  });
 })();

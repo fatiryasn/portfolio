@@ -217,7 +217,7 @@
           <div class="flex-1 relative z-20">
             <!-- intro & roles -->
             <div class="fade-up delay-[200ms] flex flex-col mb-8">
-              <div class="items-center gap-3 hidden sm:flex">
+              <div class="items-center gap-3 flex">
                 <div class="w-8 h-px bg-brand-yellow"></div>
                 <span
                   class="text-brand-brown font-grotesk text-xs md:text-sm tracking-wider"
@@ -444,8 +444,8 @@
           <p
             class="font-grotesk md:text-lg xl:text-xl text-gray-200 mt-4 md:mt-8 max-w-2xl mx-auto leading-relaxed fade-up delay-[400ms]"
           >
-            Always learning, building, and exploring new ideas through
-            technology and creativity.
+            Exploring ideas, crafting solutions, and growing through every line
+            of code.
           </p>
         </div>
 
@@ -679,6 +679,8 @@
         <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
         <div class="h-48 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
       </div>
+
+      <!-- main content -->
       <div class="relative z-10 w-full max-w-7xl mx-auto">
         <div class="mb-20 pr-5">
           <div class="inline-block relative">
@@ -703,30 +705,46 @@
             </div>
           </div>
           <p
-            class="font-manrope text-sm md:text-base lg:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[500ms]"
+            class="font-manrope text-sm sm:text-base md:text-base lg:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[500ms]"
           >
             A curated collection of work that showcases my approach to building
             digital experiences.
           </p>
         </div>
-        <div id="projects-grid"></div>
-        <div
-          id="pagination-container"
-          class="flex justify-center items-center gap-4 mt-12"
-        >
+
+        <div class="relative">
+          <div
+            id="fade-left"
+            class="pointer-events-none absolute left-0 top-0 h-full w-5 sm:w-10 md:w-20 bg-gradient-to-r from-white to-transparent opacity-0 transition-opacity duration-300 z-50"
+          ></div>
+
+          <div id="projects-grid"></div>
+
+          <div
+            id="fade-right"
+            class="pointer-events-none absolute right-0 top-0 h-full w-5 sm:w-10 md:w-20 bg-gradient-to-l from-white to-transparent opacity-0 transition-opacity duration-300 z-50"
+          ></div>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-8 fade-up delay-[100ms]">
           <button
-            id="prev-btn"
-            class="w-8 h-8 flex items-center justify-center text-brand-brown hover:text-brand-yellow transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
-            disabled
+            id="btn-prev"
+            aria-label="Previous"
+            class="hidden lg:flex w-12 h-12 items-center justify-center bg-brand-white border-2 border-brand-brown hover:bg-brand-yellow transition-colors duration-200 group"
           >
-            <i class="bi bi-chevron-left text-xl"></i>
+            <i
+              class="bi bi-chevron-left text-brand-black text-xl group-hover:-translate-x-1 transition-transform"
+            ></i>
           </button>
-          <div id="pagination-dots" class="flex items-center gap-2"></div>
+
           <button
-            id="next-btn"
-            class="w-8 h-8 flex items-center justify-center text-brand-brown hover:text-brand-yellow transition-colors duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+            id="btn-next"
+            aria-label="Next"
+            class="hidden lg:flex w-12 h-12 items-center justify-center bg-brand-white border-2 border-brand-brown hover:bg-brand-yellow transition-colors duration-200 group"
           >
-            <i class="bi bi-chevron-right text-xl"></i>
+            <i
+              class="bi bi-chevron-right text-brand-black text-xl group-hover:translate-x-1 transition-transform"
+            ></i>
           </button>
         </div>
       </div>
@@ -734,7 +752,7 @@
 
     <!-- experience/recognition -->
     <section
-      class="px-5 lg:px-16 py-24 relative flex items-center overflow-hidden bg-brand-white"
+      class="px-5 md:px-10 lg:px-16 py-24 relative flex items-center overflow-hidden bg-brand-white"
     >
       <!-- decoratives -->
       <div class="hidden lg:flex gap-4 absolute left-5 top-1/4">
@@ -747,6 +765,8 @@
         <div class="h-36 w-3 bg-brand-yellow/80 fade-up delay-[400ms]"></div>
         <div class="h-48 w-3 bg-brand-yellow fade-up delay-[200ms]"></div>
       </div>
+
+      <!-- main content -->
       <div class="relative z-10 w-full">
         <div class="max-w-7xl mx-auto">
           <div class="mb-24">
@@ -758,10 +778,9 @@
               <h2
                 class="font-jost text-5xl md:text-6xl lg:text-7xl font-bold text-brand-black leading-tight fade-up delay-[200ms]"
               >
-                Experience<span class="text-brand-yellow">.</span><br /><span
-                  class="text-brand-brown"
+                Experience<br /><span class="text-brand-brown"
                   >&amp; Recognition</span
-                >
+                ><span class="text-brand-yellow">.</span>
               </h2>
               <div class="mt-6 flex gap-2">
                 <div
@@ -776,7 +795,7 @@
               </div>
             </div>
             <p
-              class="font-manrope text-sm md:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[500ms]"
+              class="font-manrope text-sm sm:text-base md:text-lg text-gray-600 mt-6 max-w-xl fade-up delay-[500ms]"
             >
               A timeline of growth, craftsmanship, and milestones that shaped
               the developer I am today.
@@ -789,11 +808,23 @@
             <div id="experience-list" class="space-y-12"></div>
           </div>
         </div>
-        <div class="mt-24 md:px-16 xl:px-24 ">
+
+        <div class="mt-24 max-w-[90rem] mx-auto">
           <div
             id="cert-grid"
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8 lg:gap-10 py-4"
           ></div>
+          <div class="mt-8 flex sm:hidden fade-up delay-[100ms]">
+            <button
+              id="cert-toggle-btn"
+              class="inline-flex w-full items-center justify-center gap-2 bg-brand-yellow font-grotesk px-5 py-3"
+            >
+              <span>Show More</span>
+              <i
+                class="bi bi-chevron-down transition-transform duration-300"
+              ></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
