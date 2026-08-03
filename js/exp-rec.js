@@ -94,13 +94,13 @@
           <div class="ml-0 md:ml-24 lg:ml-32 relative">
             <div class="absolute top-3 left-[10px] w-full h-full border-2 ${exp.shadowColor} opacity-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
 
-            <div class="relative bg-brand-white border-2 border-brand-brown p-8 sm:p-10 flex flex-col sm:flex-row gap-6 sm:gap-10">
+            <div class="relative bg-brand-white border-2 border-brand-brown p-8 md:p-10 flex flex-col sm:flex-row gap-6 sm:gap-10">
               <div class="flex-shrink-0">
-                <div class="w-20 h-20 bg-brand-white flex items-center justify-center border-2 border-brand-yellow overflow-hidden">
+                <div class="w-24 h-20 bg-brand-white flex items-center justify-center border-2 border-brand-yellow overflow-hidden">
                   <img
                     src="${exp.logo}"
                     alt="${exp.company} logo"
-                    class="w-full h-full object-contain p-2"
+                    class="w-full h-full object-contain p-3"
                   />
                 </div>
               </div>

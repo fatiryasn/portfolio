@@ -1,36 +1,24 @@
 (function () {
   const projectsData = [
     {
+      image: "./assets/projects/admin-wisata.png",
+      alt: "Admin Wisata",
+      category: "Cross-Platform",
+      title: "Admin Wisata",
+      description: "A platform for online ticketing local tour destination.",
+      tags: ["Laravel", "MySQL", "Flutter"],
+      liveLink: "https://adminwisata.com",
+      githubLink: "",
+    },
+    {
       image: "./assets/projects/mustika-traso.png",
       alt: "Mustika Traso",
       category: "Full Stack",
       title: "Mustika Traso",
       description:
-        "A modern landing page for a precast concrete company, with basic custom CMS / admin control.",
-      tags: ["Next.js", "Supabase", "SEO", "Tailwind"],
+        "A modern landing page & CMS for a precast concrete company.",
+      tags: ["Next.js", "Supabase", "Tailwind", "SEO"],
       liveLink: "https://mustikatraso.com",
-      githubLink: "",
-    },
-    {
-      image: "./assets/projects/inklusi-kerja.png",
-      alt: "InklusiKerja",
-      category: "Full Stack",
-      title: "InklusiKerja",
-      description:
-        "A job platform connecting inclusive employers with diverse talent",
-      tags: ["React.js", "Express.js", "MongoDB"],
-      liveLink: "https://disabilitas-web.vercel.app/profile",
-      githubLink: "",
-    },
-    {
-      image: "./assets/projects/pos.png",
-      alt: "FalaahPOS",
-      category: "Full Stack",
-      title: "FalaahPOS",
-      description:
-        "POS system with inventory management, sales tracking, and real-time reporting dashboard.",
-      tags: ["React.js", "Express.js", "MySQL"],
-      liveLink: "",
       githubLink: "",
     },
     {
@@ -38,56 +26,116 @@
       alt: "PorluCoffee",
       category: "Frontend",
       title: "PorluCoffee",
-      description:
-        "A modern landing page for a coffee brand, optimized for performance and search visibility.",
-      tags: ["Next.js", "SEO", "Tailwind"],
+      description: "A modern landing page website for a coffee brand.",
+      tags: ["Next.js", "Tailwind", "SEO"],
       liveLink: "https://porlucoffee.com",
       githubLink: "",
     },
     {
-      image: "./assets/projects/falaah-ds.png",
-      alt: "Falaah Digital Solutions",
-      category: "Frontend",
-      title: "Falaah Digital Solutions",
-      description:
-        "Company profile website for a digital solutions agency with clean design.",
-      tags: ["Next.js", "SEO", "Tailwind"],
-      liveLink: "https://f-ds.vercel.app",
+      image: "./assets/projects/pos.png",
+      alt: "FalaahPOS",
+      category: "Full Stack",
+      title: "FalaahPOS",
+      description: "POS system and back office management for business needs.",
+      tags: ["React.js", "Express.js", "MySQL"],
+      liveLink: "",
       githubLink: "",
     },
-    {
-      image: "./assets/projects/portfolio.png",
-      alt: "Personal Portfolio",
-      category: "Frontend",
-      title: "Personal Portfolio",
-      description: "A portfolio website showcasing my projects and skills in software engineering.",
-      tags: ["JavaScript", "Tailwind"],
-      liveLink: "https://fatirayp.vercel.app",
-      githubLink: "",
-    },
-    {
-      image: "./assets/projects/wfm.png",
-      alt: "WFM Bot",
-      category: "Automation",
-      title: "WFM Bot",
-      description:
-        "Telegram bot for automating incident tickets distribution & workforce management.",
-      tags: ["Node.js", "Telegram API", "Web Scraping"],
-      liveLink: "",
-      githubLink: "https://github.com/fatiryasn/WFM-Bot",
-    },
-    {
-      image: "./assets/projects/ctu.png",
-      alt: "CTU Agent",
-      category: "Automation",
-      title: "CTU Agent",
-      description:
-        "Desktop application for automating hundreds incident tickets creation everyday.",
-      tags: ["Node.js", "Electron", "Web Scraping"],
-      liveLink: "",
-      githubLink: "https://github.com/fatiryasn/CTU-Agent",
-    },
+    // {
+    //   image: "./assets/projects/inklusi-kerja.png",
+    //   alt: "InklusiKerja",
+    //   category: "Full Stack",
+    //   title: "InklusiKerja",
+    //   description:
+    //     "A job platform connecting inclusive employers with diverse talent",
+    //   tags: ["React.js", "Express.js", "MongoDB"],
+    //   liveLink: "https://disabilitas-web.vercel.app/profile",
+    //   githubLink: "",
+    // },
+    // {
+    //   image: "./assets/projects/falaah-ds.png",
+    //   alt: "Falaah Digital Solutions",
+    //   category: "Frontend",
+    //   title: "Falaah Digital Solutions",
+    //   description:
+    //     "Company profile website for a digital solutions agency with clean design.",
+    //   tags: ["Next.js", "SEO", "Tailwind"],
+    //   liveLink: "https://f-ds.vercel.app",
+    //   githubLink: "",
+    // },
+    // {
+    //   image: "./assets/projects/portfolio.png",
+    //   alt: "Personal Portfolio",
+    //   category: "Frontend",
+    //   title: "Personal Portfolio",
+    //   description: "A portfolio website showcasing my projects and skills in software engineering.",
+    //   tags: ["JavaScript", "Tailwind"],
+    //   liveLink: "https://fatirayp.vercel.app",
+    //   githubLink: "",
+    // },
+    // {
+    //   image: "./assets/projects/wfm.png",
+    //   alt: "WFM Bot",
+    //   category: "Automation",
+    //   title: "WFM Bot",
+    //   description:
+    //     "Telegram bot for automating incident tickets distribution & workforce management.",
+    //   tags: ["Node.js", "Telegram API", "Web Scraping"],
+    //   liveLink: "",
+    //   githubLink: "https://github.com/fatiryasn/WFM-Bot",
+    // },
+    // {
+    //   image: "./assets/projects/ctu.png",
+    //   alt: "CTU Agent",
+    //   category: "Automation",
+    //   title: "CTU Agent",
+    //   description:
+    //     "Desktop application for automating hundreds incident tickets creation everyday.",
+    //   tags: ["Node.js", "Electron", "Web Scraping"],
+    //   liveLink: "",
+    //   githubLink: "https://github.com/fatiryasn/CTU-Agent",
+    // },
   ];
+
+  const techLogos = {
+    JavaScript: "https://devicons.io/devicons/icons/javascript.svg",
+    TypeScript: "https://devicons.io/devicons/icons/typescript-icon.svg",
+    "C#": "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg",
+    "C++":
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
+    PHP: "https://devicons.io/devicons/icons/php.svg",
+    Kotlin: "https://devicons.io/devicons/icons/kotlin-icon.svg",
+    Python: "https://devicons.io/devicons/icons/python.svg",
+    HTML5:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
+    CSS3: "https://devicons.io/devicons/icons/css.svg",
+    Tailwind: "https://devicons.io/devicons/icons/tailwind-icon.svg",
+    Bootstrap: "https://devicons.io/devicons/icons/bootstrap.svg",
+    React: "https://devicons.io/devicons/icons/react.svg",
+    "React.js": "https://devicons.io/devicons/icons/react.svg", // alias
+    "Next.js": "https://devicons.io/devicons/icons/nextjs-icon.svg",
+    "Vue.js": "https://devicons.io/devicons/icons/vue.svg",
+    "Node.js": "https://devicons.io/devicons/icons/nodejs-icon.svg",
+    Express:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
+    "Express.js":
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg", // alias
+    NestJS: "https://devicons.io/devicons/icons/nestjs.svg",
+    Laravel: "https://devicons.io/devicons/icons/laravel.svg",
+    "ASP.NET Core":
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/dotnetcore/dotnetcore-original.svg",
+    Flutter: "https://devicons.io/devicons/icons/flutter.svg",
+    Android: "https://devicons.io/devicons/icons/android.svg",
+    MySQL: "https://devicons.io/devicons/icons/mysql.svg",
+    PostgreSQL: "https://devicons.io/devicons/icons/postgresql.svg",
+    MongoDB: "https://devicons.io/devicons/icons/mongodb-icon.svg",
+    "SQL Server":
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg",
+    Redis:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg",
+    Supabase: "https://devicons.io/devicons/icons/supabase-icon.svg", // if available; fallback to text if not
+    SEO: null, // no standard logo, will show text
+  };
 
   const projectsGrid = document.getElementById("projects-grid");
   const btnPrev = document.getElementById("btn-prev");
@@ -101,10 +149,16 @@
   //create project card
   function createProjectCard(project, index) {
     const tagsHtml = project.tags
-      .map(
-        (tag) =>
-          `<span class="px-2 py-1 text-xs font-manrope bg-brand-brown/10 text-brand-brown border border-brand-brown/20 whitespace-nowrap">${tag}</span>`,
-      )
+      .map((tag) => {
+        const logoUrl = techLogos[tag];
+        if (logoUrl) {
+          return `
+              <img src="${logoUrl}" alt="${tag}" class="object-contain w-6 h-6" />
+            `;
+        } else {
+          return `<span class="text-sm font-semibold font-grotesk text-brand-yellow whitespace-nowrap">${tag}</span>`;
+        }
+      })
       .join("");
 
     const liveBtn = project.liveLink
@@ -148,7 +202,7 @@
             src="${project.image}"
             alt="${project.alt}"
             draggable="false"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-cover group-hover:scale-95 transition-transform duration-500"
           />
           ${overlayButtons}
         </div>
@@ -162,7 +216,7 @@
           ${project.title}
         </h3>
         ${descriptionHtml}
-        <div class="flex flex-wrap gap-2 mt-4">${tagsHtml}</div>
+        <div class="flex flex-wrap items-center gap-3 mt-4">${tagsHtml}</div>
       </div>
     </div>
   `;
@@ -216,7 +270,7 @@
   //render for desktop
   function renderDesktop() {
     projectsGrid.className =
-      "flex gap-8 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-12 scrollbar-hide px-1 fade-up delay-[600ms]";
+      "flex gap-8 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-12 scrollbar-hide px-1 fade-up delay-[200ms]";
     projectsGrid.style.gridAutoColumns = "";
     projectsGrid.style.gridTemplateRows = "";
     projectsGrid.style.gridAutoFlow = "";
@@ -231,7 +285,7 @@
   //render for mobile / tablet
   function renderMobileOrTablet() {
     projectsGrid.className =
-      "grid gap-3 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-7 sm:scroll-pl-12 scrollbar-hide px-1 fade-up delay-[600ms]";
+      "grid gap-3 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-7 sm:scroll-pl-12 scrollbar-hide px-1 fade-up delay-[200ms]";
     projectsGrid.style.gridTemplateRows = "auto auto";
     projectsGrid.style.gridAutoFlow = "column";
     projectsGrid.style.gridAutoColumns = "280px";
@@ -270,7 +324,6 @@
 
   //initial render
   handleLayout();
-
 
   //event listeners
   projectsGrid.addEventListener("scroll", () => {
