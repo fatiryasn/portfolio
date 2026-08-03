@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /assets/projects/
+Disallow: /assets/company-logos/
+Disallow: /assets/certifications/
+Disallow: /assets/common/n9.png
+Disallow: /assets/common/polmed.png
+
+Allow: /assets/common/profile-image.jpeg
+Allow: /assets/common/og-image.png
+
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+
+Allow: /assets/common/profile-image.jpeg
+Allow: /assets/common/og-image.png
+
+Sitemap: https://fatiray.my.id/sitemap.xml

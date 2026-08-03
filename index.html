@@ -3,7 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Fatir Ahmad Yasin - IT Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Fatir Ahmad Yasin, a Software Engineer and SWE undergraduate student based in Medan, Indonesia. Focused on creating scalable, user‑centric digital solutions. Dedicated to continuous growth."
+    />
+    <link rel="canonical" href="https://fatiray.my.id" />
+
+    <!-- open graph -->
+    <meta property="og:title" content="Fatir Ahmad Yasin – IT Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Fatir Ahmad Yasin, a Software Engineer and SWE undergraduate student based in Medan, Indonesia. Focused on creating scalable, user‑centric digital solutions. Dedicated to continuous growth."
+    />
+    <meta
+      property="og:image"
+      content="https://fatiray.my.id/assets/common/og-image.png"
+    />
+    <meta property="og:url" content="https://fatiray.my.id" />
+    <meta property="og:type" content="website" />
+
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fatir Ahmad Yasin – IT Developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Fatir Ahmad Yasin, a Software Engineer and SWE undergraduate student based in Medan, Indonesia. Focused on creating scalable, user‑centric digital solutions. Dedicated to continuous growth."
+    />
+    <meta
+      name="twitter:image"
+      content="https://fatiray.my.id/assets/common/og-image.png"
+    />
+
+    <!-- robots -->
+    <meta name="robots" content="index, follow" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -184,6 +218,31 @@
           },
         },
       };
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fatir Ahmad Yasin",
+        "givenName": "Fatir Ahmad",
+        "familyName": "Yasin",
+        "description": "Full‑stack developer and undergraduate Software Engineering student based in Medan, Indonesia.",
+        "url": "https://fatiray.my.id",
+        "sameAs": [
+          "https://instagram.com/fatiryasn",
+          "https://www.linkedin.com/in/fatir-ahmad-yasin-4614a3302/",
+          "https://github.com/fatiryasn"
+        ],
+        "knowsAbout": [
+          "Software Engineering",
+          "Full‑stack Development",
+          "Web Development",
+          "Mobile Development"
+        ],
+        "image": "https://fatiray.my.id/assets/common/profile-image.jpeg",
+        "nationality": "Indonesian"
+      }
     </script>
   </head>
   <body>
@@ -462,10 +521,11 @@
             <p
               class="font-manrope text-sm md:text-lg text-gray-100 leading-relaxed mb-6"
             >
-              A passionate software engineering student based in Medan,
-              Indonesia, driven by a deep curiosity for building digital
-              products. Currently pursuing undergraduate studies while
-              sharpening full‑stack development and system design skills.
+              A Software Engineer and undergraduate SWE student with a focus on
+              full-stack development. Experienced in building scalable and
+              user-friendly applications across both front-end and back-end,
+              strong interest in continuously learning and improving technical
+              skills.
             </p>
             <ul class="space-y-4">
               <li
@@ -826,11 +886,13 @@
           <div class="flex flex-col items-center lg:items-end gap-8">
             <div class="flex justify-center">
               <a
-                href="#"
+                href="javascript:void(0);"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
                 class="font-grotesk flex items-center gap-3 text-brand-yellow/60 hover:text-brand-yellow transition-colors duration-200 text-sm uppercase tracking-widest"
-                ><i class="bi bi-arrow-up text-lg"></i
-                ><span>Back to top</span></a
               >
+                <i class="bi bi-arrow-up text-lg"></i>
+                <span>Back to top</span>
+              </a>
             </div>
             <div class="flex gap-4">
               <a
