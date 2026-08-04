@@ -179,7 +179,10 @@
         .join("");
 
       return `
-        <div class="flex flex-col md:items-center md:border-r md:border-brand-yellow-light/30 ${isLast ? "last:border-r-0" : ""} lg:px-6">
+        <div 
+          class="flex flex-col md:items-center md:border-r md:border-brand-yellow-light/30 ${isLast ? "last:border-r-0" : ""} lg:px-6 fade-up"
+          style="transition-delay: ${(idx + 1) * 100}ms"
+        >
           <h4 class="font-lexend text-base font-semibold text-brand-yellow-light tracking-wide mb-2 md:mb-6">${group.title}</h4>
           <div class="w-full h-px bg-brand-yellow-light/30 mb-4 md:hidden"></div>
           <div class="flex flex-row flex-wrap justify-start items-start gap-6 md:gap-4 md:flex-col md:items-center md:gap-5">

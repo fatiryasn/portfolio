@@ -41,17 +41,28 @@
       liveLink: "",
       githubLink: "",
     },
-    // {
-    //   image: "./assets/projects/inklusi-kerja.png",
-    //   alt: "InklusiKerja",
-    //   category: "Full Stack",
-    //   title: "InklusiKerja",
-    //   description:
-    //     "A job platform connecting inclusive employers with diverse talent",
-    //   tags: ["React.js", "Express.js", "MongoDB"],
-    //   liveLink: "https://disabilitas-web.vercel.app/profile",
-    //   githubLink: "",
-    // },
+    {
+      image: "./assets/projects/inklusi-kerja.png",
+      alt: "InklusiKerja",
+      category: "Full Stack",
+      title: "InklusiKerja",
+      description:
+        "A job platform connecting inclusive employers with diverse talent",
+      tags: ["React.js", "Express.js", "MongoDB"],
+      liveLink: "https://disabilitas-web.vercel.app/profile",
+      githubLink: "",
+    },
+    {
+      image: "./assets/projects/ctu.png",
+      alt: "CTU Agent",
+      category: "Automation",
+      title: "CTU Agent",
+      description:
+        "Desktop application for automating hundreds incident tickets creation.",
+      tags: ["Node.js", "Electron"],
+      liveLink: "",
+      githubLink: "https://github.com/fatiryasn/CTU-Agent",
+    },
     // {
     //   image: "./assets/projects/falaah-ds.png",
     //   alt: "Falaah Digital Solutions",
@@ -84,17 +95,6 @@
     //   liveLink: "",
     //   githubLink: "https://github.com/fatiryasn/WFM-Bot",
     // },
-    // {
-    //   image: "./assets/projects/ctu.png",
-    //   alt: "CTU Agent",
-    //   category: "Automation",
-    //   title: "CTU Agent",
-    //   description:
-    //     "Desktop application for automating hundreds incident tickets creation everyday.",
-    //   tags: ["Node.js", "Electron", "Web Scraping"],
-    //   liveLink: "",
-    //   githubLink: "https://github.com/fatiryasn/CTU-Agent",
-    // },
   ];
 
   const techLogos = {
@@ -112,7 +112,7 @@
     Tailwind: "https://devicons.io/devicons/icons/tailwind-icon.svg",
     Bootstrap: "https://devicons.io/devicons/icons/bootstrap.svg",
     React: "https://devicons.io/devicons/icons/react.svg",
-    "React.js": "https://devicons.io/devicons/icons/react.svg", // alias
+    "React.js": "https://devicons.io/devicons/icons/react.svg",
     "Next.js": "https://devicons.io/devicons/icons/nextjs-icon.svg",
     "Vue.js": "https://devicons.io/devicons/icons/vue.svg",
     "Node.js": "https://devicons.io/devicons/icons/nodejs-icon.svg",
@@ -134,6 +134,8 @@
     Redis:
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg",
     Supabase: "https://devicons.io/devicons/icons/supabase-icon.svg", // if available; fallback to text if not
+    Electron:
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/electron/electron-original.svg",
     SEO: null, // no standard logo, will show text
   };
 
@@ -285,10 +287,10 @@
   //render for mobile / tablet
   function renderMobileOrTablet() {
     projectsGrid.className =
-      "grid gap-3 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-7 sm:scroll-pl-12 scrollbar-hide px-1 fade-up delay-[200ms]";
+      "grid gap-x-3 gap-y-6 overflow-x-auto overflow-y-hidden pb-6 snap-x snap-mandatory scroll-pl-7 sm:scroll-pl-12 scrollbar-hide px-1 fade-up delay-[200ms]";
     projectsGrid.style.gridTemplateRows = "auto auto";
     projectsGrid.style.gridAutoFlow = "column";
-    projectsGrid.style.gridAutoColumns = "280px";
+    projectsGrid.style.gridAutoColumns = "270px";
     projectsGrid.innerHTML = projectsData
       .map((project, idx) => createProjectCard(project, idx))
       .join("");
