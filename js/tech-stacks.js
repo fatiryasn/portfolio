@@ -14,11 +14,6 @@
           label: "TypeScript",
         },
         {
-          logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg",
-          alt: "C#",
-          label: "C#",
-        },
-        {
           logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg",
           alt: "C++",
           label: "C++",
@@ -27,11 +22,6 @@
           logo: "https://devicons.io/devicons/icons/php.svg",
           alt: "PHP",
           label: "PHP",
-        },
-        {
-          logo: "https://devicons.io/devicons/icons/kotlin-icon.svg",
-          alt: "Kotlin",
-          label: "Kotlin",
         },
         {
           logo: "https://devicons.io/devicons/icons/python.svg",
@@ -43,16 +33,6 @@
     {
       title: "Frontend Web",
       items: [
-        {
-          logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
-          alt: "HTML5",
-          label: "HTML5",
-        },
-        {
-          logo: "https://devicons.io/devicons/icons/css.svg",
-          alt: "CSS3",
-          label: "CSS3",
-        },
         {
           logo: "https://devicons.io/devicons/icons/tailwind-icon.svg",
           alt: "Tailwind CSS",
@@ -73,31 +53,16 @@
           alt: "Next.js",
           label: "Next.js",
         },
-        {
-          logo: "https://devicons.io/devicons/icons/vue.svg",
-          alt: "Vue.js",
-          label: "Vue.js",
-        },
       ],
     },
     {
       title: "Backend Web",
       items: [
         {
-          logo: "https://devicons.io/devicons/icons/nodejs-icon.svg",
-          alt: "Node.js",
-          label: "Node.js",
-        },
-        {
           logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
           alt: "Express",
           label: "Express",
           invert: true,
-        },
-        {
-          logo: "https://devicons.io/devicons/icons/nestjs.svg",
-          alt: "NestJS",
-          label: "NestJS",
         },
         {
           logo: "https://devicons.io/devicons/icons/laravel.svg",
@@ -119,15 +84,10 @@
           alt: "Flutter",
           label: "Flutter",
         },
-        {
-          logo: "https://devicons.io/devicons/icons/android.svg",
-          alt: "Android",
-          label: "Android",
-        },
       ],
     },
     {
-      title: "Database",
+      title: "Database & Tools",
       items: [
         {
           logo: "https://devicons.io/devicons/icons/mysql.svg",
@@ -143,11 +103,6 @@
           logo: "https://devicons.io/devicons/icons/mongodb-icon.svg",
           alt: "MongoDB",
           label: "MongoDB",
-        },
-        {
-          logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/microsoftsqlserver/microsoftsqlserver-plain-wordmark.svg",
-          alt: "MS SQL Server",
-          label: "SQL Server",
         },
         {
           logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg",
